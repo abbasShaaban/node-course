@@ -1,10 +1,10 @@
-/**
- * Created by Student on 12/06/2018.
- */
-
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+/**
+ * Created by Student on 12/06/2018.
+ */
+const port = process.env.PORT || 3000;
 var app = express();
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('getCurrentYear',()=>{
@@ -45,6 +45,6 @@ app.get('/bad',(request,response)=>{
         error: 'bad request'
     });
 });
-app.listen(3000,() =>{
-    console.log('server is up on port 3000');
+app.listen(port,() =>{
+    console.log(`server is up on port ${port}`);
 });
